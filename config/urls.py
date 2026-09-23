@@ -10,6 +10,8 @@ from drf_spectacular.views import (
     SpectacularSwaggerView,
     SpectacularRedocView,
 )
+from drf_spectacular.views import SpectacularSwaggerView
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -19,4 +21,5 @@ urlpatterns = [
     path('api/token/refresh/', TokenRefreshView.as_view()),
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     path('api/docs/',SpectacularSwaggerView.as_view(url_name='schema'),name='swagger-ui'),
+    path('', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
 ]
