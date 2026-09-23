@@ -14,8 +14,8 @@ from drf_spectacular.views import SpectacularSwaggerView
 
 
 urlpatterns = [
-    path("", admin.site.urls),
-    path("api/", include("catalog.urls")),
+    path("admin/", admin.site.urls),
+    path("", include("catalog.urls")),
     path('api/', include('users.urls')),
     path('api/token/', TokenObtainPairView.as_view()),
     path('api/token/refresh/', TokenRefreshView.as_view()),
